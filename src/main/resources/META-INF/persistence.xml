@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <!-- Определение имени модуля хранения (використовується ри створенні фабрики менеджерів (EntityManagerFactory("default")))-->
+    <persistence-unit name="default">
+        <class>entity.AutoCoursesEntity</class>
+        <class>entity.CertificateEntity</class>
+        <class>entity.DriverEntity</class>
+        <class>entity.ExaminationEntity</class>
+        <class>entity.MIAEntity</class>
+        <class>entity.TestEntity</class>
+        <class>entity.PracticeEntity</class>
+        <properties> <!--URL та налаштування драйвера-->
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/Driver"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <!--користувач та пароль -->
+            <property name="hibernate.connection.username" value="postgres"/>
+            <property name="hibernate.connection.password" value="12345"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.globally_quoted_identifiers" value="true"/><!--Бере всі змінні таблиці в "". Моя БД без лапок не працює-->
+
+        </properties>
+    </persistence-unit>
+</persistence>
